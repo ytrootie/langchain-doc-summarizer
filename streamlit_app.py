@@ -35,7 +35,7 @@ if st.button("Summarize"):
             llm=OpenAI(temperature=0, openai_api_key=openai_api_key)
             chain = load_summarize_chain(llm, chain_type="stuff")
             search = vectordb.similarity_search(" ")
-            summary = chain.run(input_documents=search, question="Write a summary within 150 words.")
+            summary = chain.run(input_documents=search, question="Write a detailed summary.")
             
             st.success(summary)
         except Exception as e:
